@@ -11,6 +11,7 @@ class ArrivalPlanForm(admin.ModelAdmin):
     list_filter = ('sku', 'productName')
     list_per_page = 20
     ordering = ('id',)
+    list_display_links =  ('id', 'cabinet', 'sku','productName')
     # fieldsets = ((
     # '项目',
     # {
@@ -19,6 +20,8 @@ class ArrivalPlanForm(admin.ModelAdmin):
     # }
     # ),
     # )
-
+    class Meta:
+        model =  ArrivalPlan
+        fields = '__all__'
 
 admin.site.register( ArrivalPlan, ArrivalPlanForm)

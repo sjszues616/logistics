@@ -18,3 +18,9 @@ class ArrivalPlan(models.Model):
     grossWeight = models.IntegerField("毛重/kg")
     grossWeightAll = models.IntegerField("总毛重/kg")
     orderInfo = models.TextField("预约信息",null=True,blank=True)
+
+    class Meta:
+        ordering = ['id']
+        verbose_name = "进港信息表"
+        verbose_name_plural = verbose_name
+
